@@ -183,3 +183,5 @@ CORS_ORIGIN_WHITELIST = [
     'http://cryptic-wildwood-28395.herokuapp.com',
     'https://cryptic-wildwood-28395.herokuapp.com',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
