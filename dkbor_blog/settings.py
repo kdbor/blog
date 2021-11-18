@@ -31,7 +31,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'dkbor-app.herokuapp.com',
-    '127.0.0.1'
+    '127.0.0.1',
 ]
 
 
@@ -177,8 +177,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = MEDIA_DIR
 
-CORS_ORIGIN_WHITELIST = [
-    'http//:localhost:3000',
+CORS_ALLOWED_ORIGIN = [
     'http://cryptic-wildwood-28395.herokuapp.com',
     'https://cryptic-wildwood-28395.herokuapp.com',
 ]
