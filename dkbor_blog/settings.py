@@ -15,8 +15,8 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-TEMPLATE_DIR =os.path.join(BASE_DIR,'build')
-STATIC_DIR = os.path.join(BASE_DIR,'build/static')
+TEMPLATE_DIR =os.path.join(BASE_DIR,'templates')
+STATIC_DIR = os.path.join(BASE_DIR,'static')
 MEDIA_DIR = os.path.join(BASE_DIR,'media')
 
 
@@ -27,10 +27,11 @@ MEDIA_DIR = os.path.join(BASE_DIR,'media')
 SECRET_KEY = 'django-insecure-w33=2pv-m-57ip=+b-)o6gg_ed^*8kh8i#c*j2uye38w6ax)^y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    'https://dkbor-app.herokuapp.com/'
+    'dkbor-app.herokuapp.com',
+    '127.0.0.1'
 ]
 
 
@@ -141,7 +142,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [STATIC_DIR,]
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = MEDIA_DIR
