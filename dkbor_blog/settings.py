@@ -30,7 +30,9 @@ SECRET_KEY = 'django-insecure-w33=2pv-m-57ip=+b-)o6gg_ed^*8kh8i#c*j2uye38w6ax)^y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'https://dkbor-app.herokuapp.com/'
+]
 
 
 # Application definition
@@ -58,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'dkbor_blog.urls'
