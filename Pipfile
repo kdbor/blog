@@ -9,6 +9,11 @@ djangorestframework = "*"
 django-summernote = "*"
 django-cors-headers = "*"
 pillow = "*"
+gunicorn = "*"
+whitenoise = "*"
+psycopg2 = "*"
+django-heroku = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
