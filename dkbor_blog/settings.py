@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'dkbor_blog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2-binary',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         
         'NAME': 'd1oei6scsehucj',
 
