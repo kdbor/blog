@@ -177,3 +177,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = MEDIA_DIR
+
+CORS_ORIGIN_WHITELIST = [
+    'http//:localhost:3000',
+    'http://cryptic-wildwood-28395.herokuapp.com/',
+    'https://cryptic-wildwood-28395.herokuapp.com/',
+    'http://cryptic-wildwood-28395.herokuapp.com',
+    'https://cryptic-wildwood-28395.herokuapp.com',
+]
