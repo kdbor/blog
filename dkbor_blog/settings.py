@@ -17,7 +17,7 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR =os.path.join(BASE_DIR,'templates')
-MEDIA_DIR = os.path.join(BASE_DIR,'media')
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -29,10 +29,7 @@ SECRET_KEY = 'django-insecure-w33=2pv-m-57ip=+b-)o6gg_ed^*8kh8i#c*j2uye38w6ax)^y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [
-    'dkbor-app.herokuapp.com',
-    '127.0.0.1',
-]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -174,8 +171,9 @@ STATICFILES_DIRS = (
 )
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 MEDIA_URL = '/media/'
-MEDIA_ROOT = MEDIA_DIR
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CORS_ALLOWED_ORIGIN = [
     'http://cryptic-wildwood-28395.herokuapp.com',
