@@ -85,16 +85,29 @@ WSGI_APPLICATION = 'dkbor_blog.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        
+    #     'NAME': 'd1oei6scsehucj',
+
+    #     'USER': 'ibslwgpxhglxoz',
+
+    #     'PASSWORD': '0c66b22819932462617ac1440a676acd92c1ef16f98db8b1194f049ac274248b',
+
+    #     'HOST': 'ec2-18-215-44-132.compute-1.amazonaws.com',
+
+    #     'PORT': '5432',
+    # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         
-        'NAME': 'd1oei6scsehucj',
+        'NAME': 'postgres',
 
-        'USER': 'ibslwgpxhglxoz',
+        'USER': 'postgres',
 
-        'PASSWORD': '0c66b22819932462617ac1440a676acd92c1ef16f98db8b1194f049ac274248b',
+        'PASSWORD': '8090',
 
-        'HOST': 'ec2-18-215-44-132.compute-1.amazonaws.com',
+        'HOST': 'localhost',
 
         'PORT': '5432',
     }
@@ -175,10 +188,13 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-CORS_ALLOWED_ORIGIN = [
-    'http://cryptic-wildwood-28395.herokuapp.com',
-    'https://cryptic-wildwood-28395.herokuapp.com',
-]
+# CORS_ALLOWED_ORIGIN = [
+#     'http://localhost:3000',
+#     'http://cryptic-wildwood-28395.herokuapp.com',
+#     'https://cryptic-wildwood-28395.herokuapp.com',
+# ]
 
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ALL_ORIGINS = True
 
+
+CORS_ORIGIN_ALLOW_ALL = True
