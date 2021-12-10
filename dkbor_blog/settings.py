@@ -90,13 +90,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         
-        'NAME': 'd1oei6scsehucj',
+        'NAME': 'dkbor',
 
-        'USER': 'ibslwgpxhglxoz',
+        'USER': 'postgres',
 
-        'PASSWORD': '0c66b22819932462617ac1440a676acd92c1ef16f98db8b1194f049ac274248b',
+        'PASSWORD': '8090',
 
-        'HOST': 'ec2-18-215-44-132.compute-1.amazonaws.com',
+        'HOST': 'localhost',
 
         'PORT': '5432',
     }
