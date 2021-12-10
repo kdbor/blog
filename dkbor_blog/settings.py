@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import dj_database_url
 import os
+import datetime
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +28,7 @@ TEMPLATE_DIR =os.path.join(BASE_DIR,'templates')
 SECRET_KEY = 'django-insecure-w33=2pv-m-57ip=+b-)o6gg_ed^*8kh8i#c*j2uye38w6ax)^y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -36,6 +37,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'blog_app',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -44,7 +46,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'django_summernote',
-    'blog_app',
+    'djoser',
 ]
 
 MIDDLEWARE = [
@@ -88,13 +90,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         
-        'NAME': 'd1oei6scsehucj',
+        'NAME': 'dkbor',
 
-        'USER': 'ibslwgpxhglxoz',
+        'USER': 'postgres',
 
-        'PASSWORD': '0c66b22819932462617ac1440a676acd92c1ef16f98db8b1194f049ac274248b',
+        'PASSWORD': '8090',
 
-        'HOST': 'ec2-18-215-44-132.compute-1.amazonaws.com',
+        'HOST': 'localhost',
 
         'PORT': '5432',
     }
@@ -147,15 +149,26 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# REST_FRAMEWORK = {
-#     'DEFAULT_PERMISSION_CLASSES': [
-#         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly','rest_framework.permissions.IsAdminUser'
-#     ],
-#     'DEFAULT_AUTHENTICATION_CLASSES': [
-#         'rest_framework.authentication.TokenAuthentication'
-#     ]
-# }
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    # 'DEFAULT_AUTHENTICATION_CLASSES': [
+    #     'rest_framework.authentication.TokenAuthentication'
+    # ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
 
+SIMPLE_JWT = {
+   'AUTH_HEADER_TYPES': ('JWT',),
+    'ROTATE_REFRESH_TOKENS': False,
+    'BLACKLIST_AFTER_ROTATION': False,
+    'UPDATE_LAST_LOGIN': False,
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(days=7),
+    'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=7),
+}
 
 
 SUMMERNOTE_THEME = 'bs5'
@@ -179,6 +192,39 @@ CORS_ALLOWED_ORIGIN = [
     'http://cryptic-wildwood-28395.herokuapp.com',
     'https://cryptic-wildwood-28395.herokuapp.com',
 ]
-
 CORS_ALLOW_ALL_ORIGINS = True
 
+# email: borkiprono@gmail.com
+# name: website
+# password: hxzdwbryfgeueqku
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'borkiprono@gmail.com'
+EMAIL_HOST_PASSWORD = 'hxzdwbryfgeueqku'
+EMAIL_USE_TLS = True
+
+# configure site and domain  name
+DOMAIN = 'localhost:3000'
+SITE_NAME = 'Frontend'
+
+DJOSER = {
+    'LOGIN_FIELD': 'email', 
+    'USER_CREATE_PASSWORD_RETYPE': True,
+    'USERNAME_CHANGED_EMAIL_CONFIRMATION':True,
+    'PASSWORD_CHANGED_EMAIL_CONFIRMATION': True,
+    'SEND_CONFIRMATION_EMAIL': True,
+    'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',
+    'USERNAME_RESET_CONFIRM_URL': 'email/reset/confirm/{uid}/{token}',
+    'SET_PASSWORD_RETYPE': True,
+    'SET_USERNAME_RETYPE': True,
+    'ACTIVATION_URL':'activate/{uid}/{token}',
+    'SEND_ACTIVATION_EMAIL': True,
+    'SERIALIZERS': {
+       'user_create': 'blog_app.serializers.UserCreateSerializer',
+       'user': 'blog_app.serializers.UserCreateSerializer',
+       'user_delete': 'djoser.serializers.UserDeleteSerializer'
+    },
+}
+
+AUTH_USER_MODEL = 'blog_app.UserAccount'

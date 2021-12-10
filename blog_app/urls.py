@@ -1,10 +1,11 @@
-from django.urls import path
+from django.urls import path,include
 
 from .views import (BlogPostListView,
                     BlogPostDetailView,
                     BlogPostFeaturedView, 
                     BlogPostCategoryView,
-                    FeedbackView,)
+                    FeedbackView,
+                    data_view)
 
 
 urlpatterns = [
@@ -13,4 +14,5 @@ urlpatterns = [
     path('featured', BlogPostFeaturedView.as_view(), name = 'featured'),
     path('category', BlogPostCategoryView.as_view(), name = 'category'),
     path('feedback', FeedbackView.as_view(), name = 'feedback'),
+    path('plotly',data_view, name = 'plotly'),
     ]
