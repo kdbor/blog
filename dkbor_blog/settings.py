@@ -204,8 +204,8 @@ EMAIL_HOST_PASSWORD = 'hxzdwbryfgeueqku'
 EMAIL_USE_TLS = True
 
 # configure site and domain  name
-DOMAIN = 'localhost:3000'
-SITE_NAME = 'Frontend'
+DOMAIN = 'denniesbor.live'
+SITE_NAME = 'denniesbor'
 
 DJOSER = {
     'LOGIN_FIELD': 'email', 
