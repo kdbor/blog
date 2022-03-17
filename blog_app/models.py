@@ -53,7 +53,7 @@ class BlogPost(models.Model):
     def __str__(self):
         return self.title
 
-# Feedback information
+# Feedback info
 class Feedback(models.Model):
     email= models.EmailField(max_length=150,unique=True)
     name = models.CharField(max_length=150)
