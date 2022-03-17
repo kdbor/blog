@@ -17,6 +17,7 @@ dj-database-url = "*"
 djangorestframework-simplejwt = "*"
 djoser = "*"
 social-auth-app-django = "*"
+django-tinymce = "*"
 
 [dev-packages]
 

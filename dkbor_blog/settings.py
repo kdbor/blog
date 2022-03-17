@@ -45,9 +45,40 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'django_summernote',
+    'tinymce',
     'djoser',
 ]
+
+# tiny mce configure
+
+TINYMCE_DEFAULT_CONFIG = {
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 20,
+    'selector': 'textarea',
+    'height':720,
+    'width': 1080,
+    'theme': 'silver',
+    'plugins': '''
+            textcolor save link image media preview codesample contextmenu
+            table code lists fullscreen  insertdatetime  nonbreaking
+            contextmenu directionality searchreplace wordcount visualblocks
+            visualchars code fullscreen autolink lists  charmap print  hr
+            anchor pagebreak
+            ''',
+    'toolbar1': '''
+            fullscreen preview bold italic underline | fontselect,
+            fontsizeselect  | forecolor backcolor | alignleft alignright |
+            aligncenter alignjustify | indent outdent | bullist numlist table |
+            | link image media | codesample |
+            ''',
+    'toolbar2': '''
+            visualblocks visualchars |
+            charmap hr pagebreak nonbreaking anchor |  code |
+            ''',
+    'contextmenu': 'formats | link image',
+    'menubar': True,
+    'statusbar': True,
+}
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -86,9 +117,25 @@ WSGI_APPLICATION = 'dkbor_blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        
+#         'NAME': 'dkbor',
+
+#         'USER': 'postgres',
+
+#         'PASSWORD': 'password',
+
+#         'HOST': 'localhost',
+
+#         'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'ec2-18-215-44-132.compute-1.amazonaws.com',
         
         'NAME': 'd1oei6scsehucj',
 
@@ -96,7 +143,7 @@ DATABASES = {
 
         'PASSWORD': '0c66b22819932462617ac1440a676acd92c1ef16f98db8b1194f049ac274248b',
 
-        'HOST': 'ec2-18-215-44-132.compute-1.amazonaws.com',
+        'HOST': 'postgres://ibslwgpxhglxoz:0c66b22819932462617ac1440a676acd92c1ef16f98db8b1194f049ac274248b@ec2-18-215-44-132.compute-1.amazonaws.com:5432/d1oei6scsehucj',
 
         'PORT': '5432',
     }

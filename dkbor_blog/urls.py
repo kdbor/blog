@@ -9,7 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/blog/',include(('blog_app.urls','blogs'),namespace='blogs')),
     path('api-auth/', include('rest_framework.urls')),
-    path('summernote/', include('django_summernote.urls')),
+    path('tinymce/', include('tinymce.urls')),
     path('auth/', include('djoser.urls')),   #About Authentication
     path('auth/', include('djoser.urls.jwt')), #About Authentication
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

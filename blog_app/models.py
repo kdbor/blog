@@ -2,20 +2,23 @@ from django.db import models
 from datetime import datetime
 from django.contrib.auth.models import BaseUserManager,PermissionsMixin, AbstractBaseUser
 from django.template.defaultfilters import slugify
+# from django_quill.fields import QuillField
+from tinymce.models import HTMLField
 
 
 class Categories(models.TextChoices):
     CLOUD = 'cloud'
     SPACE = 'space'
     AI = 'ai'
+    TECH = 'tech'
     
     
 class BlogPost(models.Model):
-    title = models.CharField(max_length=50)
-    slug = models.SlugField()
+    title = models.CharField(max_length=150)
+    slug = models.SlugField(max_length=255)
     category = models.CharField(max_length=50, choices = Categories.choices, default = Categories.SPACE)
-    thumbnail = models.ImageField(upload_to='photos/%Y/%m/%d')
-    excerpt = models.CharField(max_length=150)
+    thumbnail = models.BinaryField(blank = False,null = False)
+    excerpt = models.CharField(max_length=255)
     month = models.CharField(max_length = 3)
     day = models.CharField(max_length = 2)
     content = models.TextField()
