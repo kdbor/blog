@@ -2,7 +2,6 @@ from django.db import models
 from datetime import datetime
 from django.contrib.auth.models import BaseUserManager,PermissionsMixin, AbstractBaseUser
 from django.template.defaultfilters import slugify
-# from django_quill.fields import QuillField
 from tinymce.models import HTMLField
 
 

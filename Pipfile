@@ -18,7 +18,7 @@ djangorestframework-simplejwt = "*"
 djoser = "*"
 social-auth-app-django = "*"
 django-tinymce = "*"
-django-quill = "*"
+django-quill-editor = "*"
 
 [dev-packages]
 
