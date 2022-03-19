@@ -6,18 +6,19 @@ from tinymce.models import HTMLField
 
 
 class Categories(models.TextChoices):
-    CLOUD = 'cloud'
-    SPACE = 'space'
-    AI = 'ai'
-    TECH = 'tech'
+    CLOUD = 'Cloud'
+    SPACE = 'Space Sciences'
+    AI = 'Artificial Intelligence'
+    Opinion = 'Opinion'
+    Tech = "Technology"
     
     
 class BlogPost(models.Model):
     title = models.CharField(max_length=150)
     slug = models.SlugField(max_length=255)
     category = models.CharField(max_length=50, choices = Categories.choices, default = Categories.SPACE)
-    thumbnail = models.BinaryField(blank = False,null = False)
-    excerpt = models.CharField(max_length=255)
+    thumbnail = models.URLField(max_length = 200,null=False, blank=False, default="https://github.com/denniesbor/denniesbor.github.io/raw/assets/twist2/greg-jeanneau-9sxeKzuCVoE-unsplash.jpg")
+    excerpt = models.CharField(max_length=120)
     month = models.CharField(max_length = 3)
     day = models.CharField(max_length = 2)
     content = models.TextField()

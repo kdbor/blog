@@ -117,37 +117,37 @@ WSGI_APPLICATION = 'dkbor_blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        
-#         'NAME': 'dkbor',
-
-#         'USER': 'postgres',
-
-#         'PASSWORD': 'password',
-
-#         'HOST': 'localhost',
-
-#         'PORT': '5432',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'ec2-18-215-44-132.compute-1.amazonaws.com',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         
-        'NAME': 'd1oei6scsehucj',
+        'NAME': 'dkbor',
 
-        'USER': 'ibslwgpxhglxoz',
+        'USER': 'postgres',
 
-        'PASSWORD': '0c66b22819932462617ac1440a676acd92c1ef16f98db8b1194f049ac274248b',
+        'PASSWORD': 'password',
 
-        'HOST': 'postgres://ibslwgpxhglxoz:0c66b22819932462617ac1440a676acd92c1ef16f98db8b1194f049ac274248b@ec2-18-215-44-132.compute-1.amazonaws.com:5432/d1oei6scsehucj',
+        'HOST': 'localhost',
 
         'PORT': '5432',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'ec2-18-215-44-132.compute-1.amazonaws.com',
+        
+#         'NAME': 'd1oei6scsehucj',
+
+#         'USER': 'ibslwgpxhglxoz',
+
+#         'PASSWORD': '0c66b22819932462617ac1440a676acd92c1ef16f98db8b1194f049ac274248b',
+
+#         'HOST': 'postgres://ibslwgpxhglxoz:0c66b22819932462617ac1440a676acd92c1ef16f98db8b1194f049ac274248b@ec2-18-215-44-132.compute-1.amazonaws.com:5432/d1oei6scsehucj',
+
+#         'PORT': '5432',
+#     }
+# }
 
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
