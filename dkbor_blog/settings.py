@@ -55,8 +55,8 @@ TINYMCE_DEFAULT_CONFIG = {
     'cleanup_on_startup': True,
     'custom_undo_redo_levels': 20,
     'selector': 'textarea',
-    'height':480,
-    'width': 480,
+    'height':720,
+    'width': 720,
     'theme': 'silver',
     'plugins': '''
             textcolor save link image media preview codesample contextmenu
