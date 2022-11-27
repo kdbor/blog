@@ -1,0 +1,28 @@
+{
+    "containerDefinitions": [
+        {
+            "name": "blog",
+            "image": "411935212708.dkr.ecr.us-east-1.amazonaws.com/blog:latest",
+            "cpu": 0,
+            "memory": 256,
+            "portMappings": [
+                {
+                    "containerPort": 5000,
+                    "hostPort": 0,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "mountPoints": [],
+            "volumesFrom": []
+        }
+    ],
+    "family": "blog-task",
+    "volumes": [],
+    "placementConstraints": [],
+    "networkMode": "bridge",
+    "requiresCompatibilities": [
+        "EC2"
+    ]
+}

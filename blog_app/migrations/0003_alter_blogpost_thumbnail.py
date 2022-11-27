@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog_app', '0002_auto_20211210_2312'),
+        ("blog_app", "0002_auto_20211210_2312"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='blogpost',
-            name='thumbnail',
+            model_name="blogpost",
+            name="thumbnail",
             field=models.BinaryField(),
         ),
     ]

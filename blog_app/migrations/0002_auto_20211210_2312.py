@@ -6,18 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog_app', '0001_initial'),
+        ("blog_app", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='useraccount',
-            name='is_admin',
+            model_name="useraccount",
+            name="is_admin",
             field=models.BooleanField(default=False),
         ),
         migrations.AlterField(
-            model_name='useraccount',
-            name='is_superuser',
+            model_name="useraccount",
+            name="is_superuser",
             field=models.BooleanField(default=False),
         ),
     ]

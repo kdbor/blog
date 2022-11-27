@@ -7,13 +7,13 @@ import tinymce.models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog_app', '0008_alter_blogpost_title'),
+        ("blog_app", "0008_alter_blogpost_title"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='blogpost',
-            name='content',
+            model_name="blogpost",
+            name="content",
             field=tinymce.models.HTMLField(),
         ),
     ]

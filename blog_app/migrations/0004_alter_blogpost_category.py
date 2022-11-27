@@ -6,13 +6,22 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog_app', '0003_alter_blogpost_thumbnail'),
+        ("blog_app", "0003_alter_blogpost_thumbnail"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='blogpost',
-            name='category',
-            field=models.CharField(choices=[('cloud', 'Cloud'), ('space', 'Space'), ('ai', 'Ai'), ('tech', 'Tech')], default='space', max_length=50),
+            model_name="blogpost",
+            name="category",
+            field=models.CharField(
+                choices=[
+                    ("cloud", "Cloud"),
+                    ("space", "Space"),
+                    ("ai", "Ai"),
+                    ("tech", "Tech"),
+                ],
+                default="space",
+                max_length=50,
+            ),
         ),
     ]

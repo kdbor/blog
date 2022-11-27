@@ -7,13 +7,13 @@ import django_quill.fields
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog_app', '0004_alter_blogpost_category'),
+        ("blog_app", "0004_alter_blogpost_category"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='blogpost',
-            name='content',
+            model_name="blogpost",
+            name="content",
             field=django_quill.fields.QuillField(),
         ),
     ]

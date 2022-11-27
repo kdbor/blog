@@ -3,6 +3,7 @@
 
 ### Django ###
 *.log
+.git
 *.pot
 *.pyc
 __pycache__/
@@ -159,7 +160,6 @@ node_modules
 bower_components
 
 *.sublime*
-.env
 
 psd
 thumb
