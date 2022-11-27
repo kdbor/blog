@@ -125,17 +125,7 @@ try:
         },
     }
 except:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql_psycopg2",
-            "NAME": "twitter",
-            "USER": "dkbor",
-            "PASSWORD": "dkBOR12345",
-            "HOST": "nlp-project.ceyyf2jwtot3.us-east-1.rds.amazonaws.com",
-            "PORT": "5432",
-        },
-    }
-
+    pass
 db_from_env = dj_database_url.config()
 DATABASES["default"].update(db_from_env)
 
