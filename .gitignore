@@ -1,168 +1,120 @@
-# Created by https://www.toptal.com/developers/gitignore/api/react,django
-# Edit at https://www.toptal.com/developers/gitignore?templates=react,django
-
-### Django ###
-*.log
-*.pot
-*.pyc
-__pycache__/
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-latest.dump
-
-# If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
-# in your Git repository. Update and uncomment the following line accordingly.
-# <django-project-name>/staticfiles/
-
-### Django.Python Stack ###
-# Byte-compiled / optimized / DLL files
+# translation files
+*.xlf
+*.nls.*.json
+*.i18n.json
+.Dockerfil.bak
+db-back-up/tweets.csv
+__pycache__
 *.py[cod]
 *$py.class
+edit
+# Distribution / packaging 
+.Python build/ 
+develop-eggs/ 
+dist/ 
+downloads/ 
+eggs/ 
+.eggs/ 
+lib/ 
+lib64/ 
+parts/ 
+sdist/ 
+var/ 
+wheels/ 
+*.egg-info/ 
+.installed.cfg 
+*.egg 
+*.manifest 
+*.spec 
 
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
+# Log files
 pip-log.txt
 pip-delete-this-directory.txt
+*.log
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-cover/
+# Unit test / coverage reports 
+htmlcov/ 
+.tox/ 
+.coverage 
+.coverage.* 
+.cache 
+.pytest_cache/ 
+nosetests.xml 
+coverage.xml 
+*.cover 
+.hypothesis/ 
 
 # Translations
 *.mo
-
-# Django stuff:
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
+*.pot
 
 # PyBuilder
-.pybuilder/
 target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
-
+notebooks/*.csv
+db-back-up/*.csv
 # IPython
 profile_default/
 ipython_config.py
 
 # pyenv
-#   For a library or package, you might want to ignore these files since the code is
-#   intended to run in multiple environments; otherwise, check them in:
-# .python-version
+.python-version
 
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+# pyflow
 __pypackages__/
 
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
+# Environment
 .env
 .venv
 env/
 venv/
 ENV/
-env.bak/
-venv.bak/
 
-# Spyder project settings
-.spyderproject
-.spyproject
+# If you are using PyCharm # 
+.idea/**/workspace.xml 
+.idea/**/tasks.xml 
+.idea/dictionaries 
+.idea/**/dataSources/ 
+.idea/**/dataSources.ids 
+.idea/**/dataSources.xml 
+.idea/**/dataSources.local.xml 
+.idea/**/sqlDataSources.xml 
+.idea/**/dynamic.xml 
+.idea/**/uiDesigner.xml 
+.idea/**/gradle.xml 
+.idea/**/libraries 
+*.iws /out/ 
 
-# Rope project settings
-.ropeproject
+# Sublime Text
+*.tmlanguage.cache 
+*.tmPreferences.cache 
+*.stTheme.cache 
+*.sublime-workspace 
+*.sublime-project 
 
-# mkdocs documentation
-/site
+# sftp configuration file 
+sftp-config.json
 
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
+# Package control specific files Package 
+Control.last-run 
+Control.ca-list 
+Control.ca-bundle 
+Control.system-ca-bundle 
+GitHub.sublime-settings 
 
-# Pyre type checker
-.pyre/
+# Visual Studio Code # 
+.vscode/* 
+!.vscode/settings.json 
+!.vscode/tasks.json 
+!.vscode/launch.json 
+!.vscode/extensions.json 
+.history
 
-# pytype static type analyzer
-.pytype/
+test.py
 
-# Cython debug symbols
-cython_debug/
-
-### react ###
-.DS_*
-logs
-**/*.backup.*
-**/*.back.*
-
-node_modules
-bower_components
-
-*.sublime*
+apps.old
 .env
-
-psd
-thumb
-sketch
-
-# End of https://www.toptal.com/developers/gitignore/api/react,django
+Pip*
+runtime.txt
