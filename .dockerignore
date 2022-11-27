@@ -8,7 +8,7 @@
 *.pyc
 __pycache__/
 local_settings.py
-db.sqlite3
+<!-- db.sqlite3 -->
 db.sqlite3-journal
 latest.dump
 
@@ -164,5 +164,7 @@ bower_components
 psd
 thumb
 sketch
-
+blog
+.github/*
+.git
 # End of https://www.toptal.com/developers/gitignore/api/react,django

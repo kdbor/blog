@@ -35,4 +35,4 @@ COPY --from=base /usr/local/bin/ /usr/local/bin/
 # copy project
 COPY . $WORKDIR
 
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "dkbor_blog.wsgi"]
+CMD ["gunicorn", "--preload"]

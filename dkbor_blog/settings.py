@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 import datetime
 from blog_app.db_cred import secr
-
+import botocore
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -107,16 +107,19 @@ WSGI_APPLICATION = "dkbor_blog.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": 'blog',
-        "USER": secr["username"],
-        "PASSWORD": secr["password"],
-        "HOST": secr["host"],
-        "PORT": "5432",
-    },
-}
+try:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql_psycopg2",
+            "NAME": 'blog',
+            "USER": secr["username"],
+            "PASSWORD": secr["password"],
+            "HOST": secr["host"],
+            "PORT": "5432",
+        },
+    }
+except botocore.exceptions.NoCredentialsError:
+    pass
 
 db_from_env = dj_database_url.config()
 DATABASES["default"].update(db_from_env)
