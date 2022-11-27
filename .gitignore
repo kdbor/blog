@@ -118,3 +118,4 @@ apps.old
 .env
 Pip*
 runtime.txt
+blog
