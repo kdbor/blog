@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 import datetime
 from blog_app.db_cred import secr
 import botocore
+
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -16,7 +17,9 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
 
 # SECURITY WARNING:postgresql_psycopg2 keep the secret key used in production secret!
 try:
-    SECRET_KEY = secr['django_secret']
+    SECRET_KEY = secr["django_secret"]
+    if not SECRET_KEY:
+        SECRET_KEY = os.getenv("SECRET_KEY")
 except:
     SECRET_KEY = os.getenv("SECRET_KEY")
 
@@ -114,15 +117,24 @@ try:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql_psycopg2",
-            "NAME": 'blog',
+            "NAME": "blog",
             "USER": secr["username"],
             "PASSWORD": secr["password"],
             "HOST": secr["host"],
             "PORT": "5432",
         },
     }
-except botocore.exceptions.NoCredentialsError:
-    pass
+except:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql_psycopg2",
+            "NAME": "twitter",
+            "USER": "dkbor",
+            "PASSWORD": "dkBOR12345",
+            "HOST": "nlp-project.ceyyf2jwtot3.us-east-1.rds.amazonaws.com",
+            "PORT": "5432",
+        },
+    }
 
 db_from_env = dj_database_url.config()
 DATABASES["default"].update(db_from_env)

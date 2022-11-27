@@ -24,4 +24,7 @@ def get_secret():
     return secret
 
 
-secr = eval(get_secret())
+try:
+    secr = eval(get_secret())
+except:
+    secr = {}
